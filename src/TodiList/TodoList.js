@@ -1,5 +1,6 @@
 import React,{Component, Fragment}from 'react';
 import './index.css'
+import TodoItem from './TodoItem';
 class TodoList  extends Component{
     constructor(props){
         super(props);
@@ -24,12 +25,13 @@ class TodoList  extends Component{
                 {
                     this.state.list.map((item,index) =>{
                         return (
-                        <li 
-                            key={index} 
-                            onClick = {this.handleItemDelete.bind(this, index)}
-                        >
-                            [✔️] {item}    
-                        </li>
+                        <div>
+                            {/* 父组件传递数据到<TodoItem/>已供显示 */}
+                            <TodoItem 
+                                content= {item} 
+                                index = {index}
+                            />  
+                        </div>
                     )
                     })
                 }  
@@ -47,13 +49,6 @@ class TodoList  extends Component{
         this.setState({
             list:[ ...this.state.list,this.state.inputValue],
             inputValue : ''
-        })
-    }
-    handleItemDelete(index){
-        const list = [ ...this.state.list];
-        list.splice(index,1); // 删除index下标数组, 删除数量为1个
-        this.setState({
-            list :list   //删除后的list赋值给新list
         })
     }
 }
