@@ -1,6 +1,7 @@
 import React,{Component, Fragment}from 'react';
-import './index.css'
 import TodoItem from './TodoItem';
+import './index.css';
+
 class TodoList  extends Component{
     constructor(props){
         super(props);
@@ -8,6 +9,9 @@ class TodoList  extends Component{
             inputValue: '',
             list: [],
         };
+        this.handleInputChange = this.handleInputChange.bind(this); // 优化
+        this.handleBtnClick = this.handleBtnClick.bind(this);  //优化
+        this.handleItemDelete = this.handleItemDelete.bind(this); //优化
     }
     render(){
     return(
@@ -17,35 +21,34 @@ class TodoList  extends Component{
             <input  
                 className = "input"
                 value = {this.state.inputValue}
-                onChange = {this.handleInputChange.bind(this)}
-                // onChange监听input状态是否有输入 
+                onChange = {this.handleInputChange} // onChange监听input状态是否有输入 
             />
-            <button onClick = {this.handleBtnClick.bind(this)}  >加入</button>
+            <button onClick = {this.handleBtnClick}  >加入</button>
             <ul>
-                {
-                    this.state.list.map((item,index) =>{
-                        return (
-                        <div>
-                            {/* 父组件传递数据到<TodoItem/>已供显示 */}
-                            <TodoItem 
-                                content= {item}  //传递数据
-                                index = {index}  //传递数据
-                               deleteItem = {this.handleItemDelete.bind(this)}  //传递方法给子组件
-                            // this.handleItemDelete.bind(this)强制指向父组件
-                            />  
-                        </div>
-                    )
-                 })
-                }  
+                {this.getTodoList()} 
             </ul>
         </Fragment>
     )
     }
+    getTodoList(){
+        return this.state.list.map((item,index) =>{
+            return (
+                // 父组件传递数据到<TodoItem/>已供显示
+                <TodoItem 
+                    key = {index}
+                    content= {item}  //传递数据
+                    index = {index}  //传递数据
+                   deleteItem = {this.handleItemDelete}  //传递方法给子组件
+                // this.handleItemDelete.bind(this)强制指向父组件
+                />  
+        )
+     })
+    }
     handleInputChange(e) {   //方法
-        this.setState({
-            inputValue : e.target.value
-            // list[0]: e.target.value
-        })
+        const value = e.target.value;  //优化
+        this.setState(()=>({
+            inputValue : value
+        }));
     }
     handleBtnClick(){   //方法
         this.setState({
