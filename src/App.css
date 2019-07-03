@@ -1,33 +1,141 @@
-.App {
+.answer-border-normal1 {
+  width: 280px;
+  height: 118px;
+  /* opacity: 0.8; */
+  border-radius: 6px;
+  background-color: rgba(54,65,82,0.8);
+}
+.answer-border-normal2 {
+  width: 280px;
+  height: 162px;
+  /* opacity: 0.8; */
+  border-radius: 6px;
+  background-color: rgba(54,65,82,0.8);
+}
+.answer-border-normal3{
+  width: 280px;
+  height: 206px;
+  /* opacity: 0.8; */
+  border-radius: 6px;
+  background-color: rgba(54,65,82,0.8);
+}
+/* title标题区 */
+.answer-title{
+  width: 280px;
+  height: 62px;
+}
+/* 正在答题提示... */
+.answer-title-left{
+  margin-top: 12px;
+  margin-left: 24px;
+  width: 80px;
+  height: 17px;
+  float: left;
+}
+/* 正在答题提示字体... */
+.answer-title-left-font{
+  width: 72px;
+  height: 17px;
+  font-family: PingFangSC;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+/* 隐藏按钮 */
+.answer-title-right {  
+  float:right;
+  margin-top:16px;
+  margin-right: 24px;
+  width: 52px;
+  height: 24px;
+  /* opacity: 0.4; */
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.4);
   text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+/* 隐藏按钮字体 */
+.answer-title-right-font{
+  width: 28px;
+  height: 17px;
+  font-family: PingFangSC;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.answer-content-chose-A{
+  margin-left: 20px;
+  margin-right: 6px;
+  float: left;
+  border:2px;
 }
-
-.App-link {
-  color: #61dafb;
+.answer-content-chose-B{
+  /* margin-top: 20px; */
+  margin-right: 20px;
+  margin-left: 6px;
+  float: left;
+  border:2px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.answer-content-chose-C{
+  margin-top: 12px;
+  margin-left: 20px;
+  margin-right: 6px;
+  float: left;
+  border:2px;
+}
+.answer-content-chose-D{
+  margin-top: 12px;
+  margin-right: 20px;
+  margin-left: 6px;
+  float: left;
+  border:2px;
+}
+.answer-content-chose-E{
+  margin-top: 12px;
+  margin-left: 20px;
+  margin-right: 6px;
+  float: left;
+  border:2px;
+}
+.answer-content-chose-F{
+  margin-top: 12px;
+  margin-right: 20px;
+  margin-left: 6px;
+  float: left;
+  border:2px;
+}
+/* 整个按钮区域 */
+.answer-options{ 
+  width: 110px;
+  height: 32px;
+  /* opacity: 0.2; */
+  border-radius: 16px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+/*"选择"字体 */
+.answer-content-chose-font{
+  width: 24px;
+  height: 17px;
+  font-family: PingFangSC;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+/* 选择ABCD字母字体 */
+.answer-options-letter-font{
+ color: powderblue;
 }

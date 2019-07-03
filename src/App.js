@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React,{Fragment}from 'react';
+//import logo from './logo.svg';
+//import './App.css';
+import TodoList from './TodoList';
+import AnswerArea1 from './AnswerArea1';
+import AnswerArea2 from './AnswerArea2';
+import AnswerArea3 from './AnswerArea3';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <Fragment>
+       {/* <TodoList/> */}
+       <AnswerArea1/>
+       <p> </p>
+       <AnswerArea2/>
+       <p></p>       
+       <AnswerArea3/>
+   </Fragment>
+
   );
 }
-
 export default App;
+
