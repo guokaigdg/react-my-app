@@ -1,6 +1,5 @@
-// import React from 'react';
 import React,{Component, Fragment}from 'react';
-import './App';
+import './index.css'
 class TodoList  extends Component{
     constructor(props){
         super(props);
@@ -13,7 +12,9 @@ class TodoList  extends Component{
     return(
         <Fragment >
             <p>备忘录</p> 
-            <input  className = "input"
+            请输入内容 : 
+            <input  
+                className = "input"
                 value = {this.state.inputValue}
                 onChange = {this.handleInputChange.bind(this)}
                 // onChange监听input状态是否有输入 
@@ -27,12 +28,12 @@ class TodoList  extends Component{
                             key={index} 
                             onClick = {this.handleItemDelete.bind(this, index)}
                         >
-                            [✔️] {item}      DEL
-                        </li>)
+                            [✔️] {item}    
+                        </li>
+                    )
                     })
-                }
+                }  
             </ul>
-           
         </Fragment>
     )
     }
