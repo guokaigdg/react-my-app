@@ -1,23 +1,19 @@
 import React, {Component} from 'react';
 class TodoItem extends Component{
+    constructor(props){
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
     render(){
         return(
-            <div> 
-                <li 
-                  key={this.props.index} 
-                  onClick = {this.handleItemDelete.bind(this, this.props.index)}
-                >
-                 [✔️] {this.props.content}    
-                 </li>
+            <div onClick = {this.handleClick}>               
+                 [✔️] {this.props.content}                  
             </div>
         )
     }
-    handleItemDelete(index){
-        const list = [ ...this.state.list];
-        list.splice(index,1); // 删除index下标数组, 删除数量为1个
-        this.setState({
-            list :list   //删除后的list赋值给新list
-        })
+    handleClick(){
+        // 子组件向父组件传递 数组下标index  this.props.deleteItem是父组件传递过来的方法
+        this.props.deleteItem(this.props.index)
     }
 }
 export default TodoItem;

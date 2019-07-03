@@ -30,10 +30,12 @@ class TodoList  extends Component{
                             <TodoItem 
                                 content= {item} 
                                 index = {index}
+                               deleteItem = {this.handleItemDelete.bind(this)}
+                            // this.handleItemDelete.bind(this)强制指向父组件
                             />  
                         </div>
                     )
-                    })
+                 })
                 }  
             </ul>
         </Fragment>
@@ -51,6 +53,12 @@ class TodoList  extends Component{
             inputValue : ''
         })
     }
+    handleItemDelete(index){
+        const list = [ ...this.state.list];
+        list.splice(index,1); // 删除index下标数组, 删除数量为1个
+        this.setState({
+            list :list   //删除后的list赋值给新list
+        })
+    }
 }
-
 export default TodoList;
