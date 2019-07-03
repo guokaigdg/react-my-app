@@ -28,9 +28,9 @@ class TodoList  extends Component{
                         <div>
                             {/* 父组件传递数据到<TodoItem/>已供显示 */}
                             <TodoItem 
-                                content= {item} 
-                                index = {index}
-                               deleteItem = {this.handleItemDelete.bind(this)}
+                                content= {item}  //传递数据
+                                index = {index}  //传递数据
+                               deleteItem = {this.handleItemDelete.bind(this)}  //传递方法给子组件
                             // this.handleItemDelete.bind(this)强制指向父组件
                             />  
                         </div>
