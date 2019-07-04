@@ -2,7 +2,7 @@ import React,{Component, Fragment}from 'react';
 import TodoItem from './TodoItem';
 import './index.css';
 
-class TodoList  extends Component{
+class TodoList extends Component{
     constructor(props){
         super(props);
         this.state ={
@@ -38,7 +38,7 @@ class TodoList  extends Component{
                     key = {index}
                     content= {item}  //传递数据
                     index = {index}  //传递数据
-                   deleteItem = {this.handleItemDelete}  //传递方法给子组件
+                    deleteItem = {this.handleItemDelete}  //传递方法给子组件
                 // this.handleItemDelete.bind(this)强制指向父组件
                 />  
         )

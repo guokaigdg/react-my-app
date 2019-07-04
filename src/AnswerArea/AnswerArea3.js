@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-//import './App.less'
-import './App.css'
-class AnswerArea2 extends Component {
+import './index.css'
+class AnswerArea3 extends Component {
   render() {
   	return(
-      // <div className = 'answer-area-component-wrap-normal'>
         <div>
-      	<div className = 'answer-border-normal2'>
+      	<div className = 'answer-border-normal3'>
       	  <div className = 'answer-title'>
             <div className = 'answer-title-left'>
               <span className = 'answer-title-left-font'>正在答题中...</span>
@@ -41,6 +39,18 @@ class AnswerArea2 extends Component {
                   <span className = 'answer-options-letter-font'>D</span>
                 </div>
               </div>
+              <div className = 'answer-content-chose-E'>
+                <div className = 'answer-options'>
+                  <span className = 'answer-content-chose-font'>选择</span>
+                  <span className = 'answer-options-letter-font'>E</span>
+                </div>
+              </div>
+              <div className = 'answer-content-chose-F'>
+                <div className = 'answer-options'>
+                  <span className = 'answer-content-chose-font'>选择</span>
+                  <span className = 'answer-options-letter-font'>F</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -48,4 +58,4 @@ class AnswerArea2 extends Component {
     )
   }
 }
-export default AnswerArea2;
+export default AnswerArea3;
