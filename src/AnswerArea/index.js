@@ -5,6 +5,7 @@ class AnswerArea extends Component {
   constructor (props){
     super(props);
     this.state = {
+      isShow:false,
       chooseOption: 'null',
     }
   }
@@ -28,18 +29,19 @@ class AnswerArea extends Component {
         <div className = 'answer-content'>
             {/* 渲染选择项 */}
             {/* {renderAnswerOptions()}  */}
+             
               <div className = {CX({
+                'answer-options': true,
                 'answer-options-on': this.state.chooseOption === 'A',
-                'answer-options-off': this.state.chooseOption !== 'A',
-              })}
+                 })}
                 onClick = {this.handlechoose.bind(this,'A')}
-              >
+                >
                 <span className = 'answer-content-chose-font'>选择</span>
                 <span className = 'answer-options-letter-font'>A</span>
-              </div>
+                 </div>
               <div className = {CX({
+                'answer-options': true,
                 'answer-options-on': this.state.chooseOption === 'B',
-                'answer-options-off': this.state.chooseOption !== 'B',
               })}
                 onClick = {this.handlechoose.bind(this,'B')}
               >
@@ -47,8 +49,8 @@ class AnswerArea extends Component {
                 <span className = 'answer-options-letter-font'>B</span>
               </div>
               <div className = {CX({
+                'answer-options': true,
                 'answer-options-on': this.state.chooseOption === 'C',
-                'answer-options-off': this.state.chooseOption !== 'C',
               })}
                 onClick = {this.handlechoose.bind(this,'C')}
               >

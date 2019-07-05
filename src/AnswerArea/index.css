@@ -4,7 +4,7 @@
     justify-content: center; /*主轴对齐*/
     flex-direction: column;  /*竖直排列*/
     width: 280px;
-    height: 206px;
+    /* height: 206px; */
     border-radius: 6px;
     background-color: rgba(54,65,82,0.8);
 }
@@ -49,7 +49,6 @@
     background-color: rgba(255, 255, 255, 0.4);
     text-align: center;
 }
-
 /* 隐藏按钮字体 */
 .answer-title-right-font{
     width: 28px;
@@ -75,8 +74,8 @@
      align-items: center; /*交叉轴对齐 */
      margin-bottom: 24px;
 }
-/* 未选中选择按钮 0ff */
-.answer-options-off{
+/* 默认未选中选择按钮显示 */
+.answer-options{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,16 +86,8 @@
     text-align: center;
     background-color: rgba(255, 255, 255, 0.2);
 }
-/* 选中选择按钮 on*/
+/* 选中选择按钮状态*/
 .answer-options-on{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 6px;
-    width: 110px;
-    height: 32px;
-    border-radius: 16px;
-    text-align: center;
     background-color: rgba(255, 255, 255, 0.4);
 }
 /* 选择字体 */
