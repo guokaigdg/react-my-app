@@ -1,141 +1,120 @@
-.answer-border-normal1 {
-  width: 280px;
-  height: 118px;
-  /* opacity: 0.8; */
-  border-radius: 6px;
-  background-color: rgba(54,65,82,0.8);
+.answer-border{
+    display: flex;
+    align-items: center;
+    justify-content: center; /*主轴对齐*/
+    flex-direction: column;  /*竖直排列*/
+    width: 280px;
+    height: 206px;
+    border-radius: 6px;
+    background-color: rgba(54,65,82,0.8);
 }
-.answer-border-normal2 {
-  width: 280px;
-  height: 162px;
-  /* opacity: 0.8; */
-  border-radius: 6px;
-  background-color: rgba(54,65,82,0.8);
-}
-.answer-border-normal3{
-  width: 280px;
-  height: 206px;
-  /* opacity: 0.8; */
-  border-radius: 6px;
-  background-color: rgba(54,65,82,0.8);
-}
-/* title标题区 */
 .answer-title{
-  width: 280px;
-  height: 62px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;  /*主轴对齐*/
+    align-items: center; /*交叉轴对齐*/
+    width: 280px;
+    height: 62px;
 }
-/* 正在答题提示... */
+/* 正在答题显示区 */
 .answer-title-left{
-  margin-top: 12px;
-  margin-left: 24px;
-  width: 80px;
-  height: 17px;
-  float: left;
+    display: flex;
+    width: 110px;
+    height: 32px;
+    align-items: center;
 }
-/* 正在答题提示字体... */
+/* 正在答题字体 */
 .answer-title-left-font{
-  width: 72px;
-  height: 17px;
-  font-family: PingFangSC;
-  font-size: 12px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: #ffffff;
-}
+    width: 72px;
+    height: 17px;
+    font-family: PingFangSC;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    /* text-align: center; */
+    align-self: center;
+    color: #ffffff;
+  }
 /* 隐藏按钮 */
-.answer-title-right {  
-  float:right;
-  margin-top:16px;
-  margin-right: 24px;
-  width: 52px;
-  height: 24px;
-  /* opacity: 0.4; */
-  border-radius: 6px;
-  background-color: rgba(255, 255, 255, 0.4);
-  text-align: center;
+.answer-title-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 24px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.4);
+    text-align: center;
 }
+
 /* 隐藏按钮字体 */
 .answer-title-right-font{
-  width: 28px;
-  height: 17px;
-  font-family: PingFangSC;
-  font-size: 12px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #ffffff;
+    width: 28px;
+    height: 17px;
+    font-family: PingFangSC;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
 }
-.answer-content-chose-A{
-  margin-left: 20px;
-  margin-right: 6px;
-  float: left;
-  border:2px;
+/* 选项区 */
+.answer-content{
+    width: 244px;
+    display: flex;
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start; /*主轴对齐*/
+    /* justify-content: space-between;   */
+     align-items: center; /*交叉轴对齐 */
+     margin-bottom: 24px;
 }
-.answer-content-chose-B{
-  /* margin-top: 20px; */
-  margin-right: 20px;
-  margin-left: 6px;
-  float: left;
-  border:2px;
+/* 未选中选择按钮 0ff */
+.answer-options-off{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 6px;
+    width: 110px;
+    height: 32px;
+    border-radius: 16px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
 }
-.answer-content-chose-C{
-  margin-top: 12px;
-  margin-left: 20px;
-  margin-right: 6px;
-  float: left;
-  border:2px;
+/* 选中选择按钮 on*/
+.answer-options-on{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 6px;
+    width: 110px;
+    height: 32px;
+    border-radius: 16px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.4);
 }
-.answer-content-chose-D{
-  margin-top: 12px;
-  margin-right: 20px;
-  margin-left: 6px;
-  float: left;
-  border:2px;
-}
-.answer-content-chose-E{
-  margin-top: 12px;
-  margin-left: 20px;
-  margin-right: 6px;
-  float: left;
-  border:2px;
-}
-.answer-content-chose-F{
-  margin-top: 12px;
-  margin-right: 20px;
-  margin-left: 6px;
-  float: left;
-  border:2px;
-}
-/* 整个按钮区域 */
-.answer-options{ 
-  width: 110px;
-  height: 32px;
-  /* opacity: 0.2; */
-  border-radius: 16px;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.4);
-}
-/*"选择"字体 */
+/* 选择字体 */
 .answer-content-chose-font{
-  width: 24px;
-  height: 17px;
-  font-family: PingFangSC;
-  font-size: 12px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: #ffffff;
+    width: 24px;
+    height: 17px;
+    font-family: PingFangSC;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
 }
 /* 选择ABCD字母字体 */
 .answer-options-letter-font{
- color: powderblue;
+    color: powderblue;
+    /* background-image: url('~ROOT/shared/assets/image/button-play-media-60-72-190314.png'); */
 }
