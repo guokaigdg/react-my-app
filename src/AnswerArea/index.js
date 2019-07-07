@@ -1,21 +1,32 @@
 import React, { Component } from 'react'
 import './index.css';
+import PropTypes from 'prop-types';
 import CX from 'classnames' ;
 class AnswerArea extends Component {
+  static propTypes = {
+    count: PropTypes.number,
+}
+static defaultProps = {
+  count: 2,
+}
   constructor (props){
     super(props);
     this.state = {
       isShow:false,
       chooseOption: 'null',
+      list: [],
     }
   }
   render() {
-    // 生成多个选择项
+    const {count} = this.props; //父组件传递过来选项个数
+    
+    // 根据父组件传递发个数渲染生成选项数目
     // const renderAnswerOptions = () => {
     //     return elclasses.map((elclass, i) => <div key={elclass} ref={highlightRefs.current[i]} className="guide-element-highlight guide-showElement" />)
     // }
   	return(
       <div>
+      <p> 父组件传递过来的选项数目: {count}</p>
       <div className = 'answer-border'>
         <div className = 'answer-title'>
           <div className = 'answer-title-left'>

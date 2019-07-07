@@ -1,5 +1,15 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 class TodoItem extends Component{
+    static propTypes = {
+        content: PropTypes.string,
+        deleteItem: PropTypes.func,
+        index: PropTypes.number,
+    }
+    static defaultProps = {
+        content: 123,
+    
+    }
     constructor(props){
         super(props);
         this.handleClick = this.handleClick.bind(this);  // 优化
@@ -18,4 +28,5 @@ class TodoItem extends Component{
         deleteItem(index);
     }
 }
+
 export default TodoItem;
