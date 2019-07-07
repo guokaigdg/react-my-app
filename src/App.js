@@ -14,13 +14,14 @@ class App extends Component{
   return (  
    <Fragment>
        <button onClick = {this.handleClicknum.bind(this,'null')}>清空</button>
-       <button onClick = {this.handleClicknum.bind(this, '2')}>2个选项</button>
-       <button onClick = {this.handleClicknum.bind(this, '4')}>4个选项</button>
-       <button onClick = {this.handleClicknum.bind(this, '6')}>6个选项</button>
+       <button onClick = {this.handleClicknum.bind(this, 2)}>2个选项</button>
+       <button onClick = {this.handleClicknum.bind(this, 4)}>4个选项</button>
+       <button onClick = {this.handleClicknum.bind(this, 6)}>6个选项</button>
        <p>选择的项目个数 : {this.state.answernum}</p>
        {/* <p>{this.state.answernum}</p> */}
-      <TodoList/>
+      {/* <TodoList/> */}
       <AnswerArea count ={this.state.answernum}/> 
+      
    </Fragment>
   )
   }

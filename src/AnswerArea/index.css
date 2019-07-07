@@ -109,3 +109,9 @@
     color: powderblue;
     /* background-image: url('~ROOT/shared/assets/image/button-play-media-60-72-190314.png'); */
 }
+.ceshi{
+    width: 110px;
+    height: 32px;
+    margin:  6px;
+    background-color:palegreen;
+}
