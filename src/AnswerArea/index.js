@@ -14,6 +14,7 @@ class AnswerArea extends Component {
     this.state = {
       isShow:false,
       chooseOption: 'null',
+      isClick: false,
     }
   }
   render() {
@@ -26,6 +27,7 @@ class AnswerArea extends Component {
           className = {CX({
           'answer-options': true,
           'answer-options-on': this.state.chooseOption === item,
+          'answer-options-noclick':this.state.isClick == true,
            })}
           onClick = {this.handlechoose.bind(this,item)}
           >
@@ -36,7 +38,7 @@ class AnswerArea extends Component {
     }
   	return(
       <div>
-      <p> 父组件传递过来的选项数目: {count} 数组: {list.slice(0,count)}</p>
+      <p> 父组件传递过来的选项数目: {count} 选项: {list.slice(0,count)}</p>
       <div className = 'answer-border'>
         <div className = 'answer-title'>
           <div className = 'answer-title-left'>
@@ -61,11 +63,17 @@ class AnswerArea extends Component {
   handlechoose(choose){
     this.setState({
       chooseOption: choose,
+      isClick: true,
     })
   }
   handleHidden(){
     const {handleHidden} = this.props; //父组件传递过来的方法
     handleHidden();
+  }
+  handleClick(){
+    this.setState({
+      isClick:true
+    })
   }
 }
 export default AnswerArea;
