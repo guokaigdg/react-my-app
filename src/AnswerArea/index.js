@@ -6,7 +6,7 @@ class AnswerArea extends Component {
   static propTypes = {
     count: PropTypes.number,
 }
-static defaultProps = {
+  static defaultProps = {
   count: 2,
 }
   constructor (props){
@@ -14,21 +14,13 @@ static defaultProps = {
     this.state = {
       isShow:false,
       chooseOption: 'null',
-      list0: [],
-      list2: ['A','B'],
-      list3: ['A','B','C'],
-      list: ['A','B','C','D'],
-      list5: ['A','B','C','D','E'],
-      list6: ['A','B','C','D','E','F'],
-      guokai: 'ok',
     }
   }
   render() {
+    const list= ['A','B','C','D','E','F'];
     const {count} = this.props; //父组件传递过来选项个数
-
     const renderAnswerOptions = () => {  // 根据父组件传递发个数渲染生成选项数目
-       
-        return this.state.list.map((item, index) => 
+        return list.slice(0,count).map((item, index) => 
         <div 
           key = {index} 
           className = {CX({
@@ -44,21 +36,23 @@ static defaultProps = {
     }
   	return(
       <div>
-      <p> 父组件传递过来的选项数目: {count}</p>
-      <p> 父组件传递过来的选项数目: {this.state.guokai}</p>
-      {/* <li>{this.status.list2}</li> */}
+      <p> 父组件传递过来的选项数目: {count} 数组: {list.slice(0,count)}</p>
       <div className = 'answer-border'>
         <div className = 'answer-title'>
           <div className = 'answer-title-left'>
             <span className = 'answer-title-left-font'>正在答题中...</span>
           </div>
           <div className='answer-title-right'>
-             <span className='answer-title-right-font'>隐藏</span>
+             <span 
+              className='answer-title-right-font'
+              onClick = {this.handleHidden.bind(this)}
+             >
+               隐藏
+            </span>
           </div>
         </div>
-
         <div className = 'answer-content'>
-            {renderAnswerOptions()}         
+          {renderAnswerOptions()}         
         </div>
       </div>
       </div>
@@ -69,6 +63,9 @@ static defaultProps = {
       chooseOption: choose,
     })
   }
-  
+  handleHidden(){
+    const {handleHidden} = this.props; //父组件传递过来的方法
+    handleHidden();
+  }
 }
 export default AnswerArea;
