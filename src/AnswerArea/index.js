@@ -15,6 +15,7 @@ class AnswerArea extends Component {
       isShow:false,
       chooseOption: 'null',
       isClick: false,
+      test:'on',
     }
   }
   render() {
@@ -39,6 +40,7 @@ class AnswerArea extends Component {
   	return(
       <div>
       <p> 父组件传递过来的选项数目: {count} 选项: {list.slice(0,count)}</p>
+      <p>隐藏开关: {this.state.test}</p>
       <div className = 'answer-border'>
         <div className = 'answer-title'>
           <div className = 'answer-title-left'>
@@ -67,8 +69,9 @@ class AnswerArea extends Component {
     })
   }
   handleHidden(){
-    const {handleHidden} = this.props; //父组件传递过来的方法
-    handleHidden();
+    this.setState({
+      test:'off',
+    })
   }
   handleClick(){
     this.setState({
