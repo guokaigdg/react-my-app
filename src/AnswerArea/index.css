@@ -70,9 +70,8 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-start; /*主轴对齐*/
-    /* justify-content: space-between;   */
-     align-items: center; /*交叉轴对齐 */
-     margin-bottom: 24px;
+    align-items: center; /*交叉轴对齐 */
+    margin-bottom: 24px;
 }
 /* 默认未选中选择按钮显示 */
 .answer-options{

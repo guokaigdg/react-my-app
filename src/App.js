@@ -7,7 +7,8 @@ class App extends Component{
     super(props);
     this.state = {
       answernum: 0,
-      isHidden: 0,
+      // isHidden: 0,
+      isChoose:true,
     };
     this.handleClicknum = this.handleClicknum.bind(this);
   }
@@ -23,16 +24,22 @@ class App extends Component{
        <p>选择的项目个数 : {this.state.answernum}</p>
       {/* <TodoList/> */}
       <AnswerArea 
-        count ={this.state.answernum}
-        // handleHidden = {this.handleHidden}
+         answerCount ={this.state.answernum}
+         handleHidden = {this.isHidden}
+         isChoose = {this.state.isChoose}
+         onChoose = {this.onChoose}
       /> 
    </Fragment>
   )
   }
   handleClicknum(choose){
     this.setState({
-     answernum: choose
+     answernum: choose,
+     isChoose:false,
    })
+  }
+  isHidden(){
+
   }
 }
 export default App;
