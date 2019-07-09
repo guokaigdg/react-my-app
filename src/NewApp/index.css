@@ -1,8 +1,16 @@
 .show{
-    opacity: 1;  /*不透明度 */
-    transition: all .3s ease-in;  
+    animation: show-item 2s ease-in forwards; /*动画曲线 easr-in*/
 }
 .hide{
-    opacity: 0;
-    transition: all .3s ease-in;
+    animation: hide-item 2s ease-in forwards;
+}
+@keyframes show-item {
+    0% {opacity: 0;color:red;}
+    50% {opacity: 0.5; color: green }
+    100% {opacity: 1; color:black}
+}
+@keyframes hide-item {
+    0% {opacity: 1;color:red;}
+    50% {opacity: 0.5; color: green }
+    100% {opacity: 0; color:powderblue}
 }

@@ -21,7 +21,7 @@ class App extends Component{
                 hello
             </div>
             <button onClick ={() => this.handleToggole()}>
-                tog
+                点击展动画效果
             </button>
         </Fragment>
         )
