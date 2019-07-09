@@ -1,0 +1,8 @@
+.show{
+    opacity: 1;  /*不透明度 */
+    transition: all .3s ease-in;  
+}
+.hide{
+    opacity: 0;
+    transition: all .3s ease-in;
+}

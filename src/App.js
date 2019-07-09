@@ -1,7 +1,8 @@
 import React,{Component, Fragment}from 'react';
 import TodoList from './TodiList/TodoList';
 import AnswerArea from './AnswerArea/index';
-// import constants from 'jest-haste-map/build/constants';
+import NewApp from './NewApp/index';
+
 class App extends Component{
   constructor(props){
     super(props);
@@ -22,13 +23,14 @@ class App extends Component{
        <button onClick = {this.handleClicknum.bind(this, 5)}>5个选项</button>
        <button onClick = {this.handleClicknum.bind(this, 6)}>6个选项</button>
        <p>选择的项目个数 : {this.state.answernum}</p>
-      {/* <TodoList/> */}
-      <AnswerArea 
+      <TodoList/>
+      {/* <AnswerArea 
          answerCount ={this.state.answernum}
          onHideClick = {this.isHidden}
          isChoose = {this.state.isChoose}
          onChooseClick = {this.onChoose}
-      /> 
+      />  */}
+      <NewApp/>
    </Fragment>
   )
   }
