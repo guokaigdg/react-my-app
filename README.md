@@ -13,3 +13,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - <AnswerArea2.js>
 - <AnswerArea3.js>
 ### 生命周期函数: 指在某一个时刻组价会自动调用执行的函数
+- componentWillMount()在组件即将被挂载(第一次渲染页面)到页面的时刻自动执行
+- componentDidMount()组件被挂载到页面之后, 自动被执行
