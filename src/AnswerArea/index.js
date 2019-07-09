@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import './index.css';
 import PropTypes from 'prop-types';
 import CX from 'classnames' ;
+
+import './index.css';
+
 const list= ['A','B','C','D','E','F'];
 class AnswerArea extends Component{
   constructor (props){
@@ -19,7 +21,7 @@ class AnswerArea extends Component{
     className = {CX({
     'answer-options': true,
     'answer-options-on': this.state.chooseOption === item,
-    'answer-options-noclick':this.state.isClick === true  //|| isChoose === true,
+    'answer-options-noclick':this.state.isClick === true || this.props.isChooseDisable === true,
      })}
     onClick = {this.handleChoose.bind(this,item)}
     >
@@ -29,32 +31,23 @@ class AnswerArea extends Component{
   )
 }
   handleChoose(choose){
-    // if(isChoose === true){
+     if(this.props.isChooseDisable === true){
+       return
+     }
       this.setState({
         chooseOption: choose,
         isClick:true,
-        isChoose:false,
-        // onChoose()
       })
-    // }
-    // else{
-      this.setState({
-        chooseOption: choose,
-        isClick:true,
-        isChoose:true,
-        // onChoose()
-      })
-    // }
+     this.props.onChooseClick()
   }
   handleHidden(){
-    // isHidden();  
+    this.props.onHideClick();
   }
   render() {
+    // const wrapStyles = _.assign({}, this.props.style)
     const {answerCount} = this.props; //父组件传递过来的选项个数
-    const {isChoose} = this.props;
   	return(
-      <div>
-      <p> 父组件传递过来的选项数目: {answerCount} 选项: {list.slice(0,answerCount)}</p>
+      // <div className = 'answer-border' style={wrapStyles}>
       <div className = 'answer-border'>
         <div className = 'answer-title'>
           <div className = 'answer-title-left'>
@@ -73,18 +66,20 @@ class AnswerArea extends Component{
           {this.renderAnswerOptions(answerCount)}         
         </div>
       </div>
-      </div>
     )
   }
+}
+AnswerArea.propTypes = {
+  // style: PropTypes.object,
+  answerCount: PropTypes.number, //选项个数
+  onHideClick: PropTypes.func,  //隐藏操作
+  isChooseDisable:PropTypes.bool, //是否允许选项可点击
+  onChooseClick:PropTypes.func, //选中之后的操作
+}
+AnswerArea.defaultProps = {
+  // style:{},
+  answerCount: 2,
+  isChooseDisable: false,
 
 }
 export default AnswerArea;
-AnswerArea.propTypes = {
-  answerCount: PropTypes.number,
-  isHidden: PropTypes.func,
-  isChoose:PropTypes.bool, //是否允许选项可点击
-  onChoose:PropTypes.func, //选中之后的操作
-}
-AnswerArea.defaultProps = {
-  answerCount: 2,
-}
