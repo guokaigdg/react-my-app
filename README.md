@@ -12,3 +12,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - <AnswerArea1.js>
 - <AnswerArea2.js>
 - <AnswerArea3.js>
+### 生命周期函数: 指在某一个时刻组价会自动调用执行的函数
