@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
+import _ from 'lodash'
 import CX from 'classnames' ;
 
 import './index.css';
@@ -44,11 +45,10 @@ class AnswerArea extends Component{
     this.props.onHideClick();
   }
   render() {
-    // const wrapStyles = _.assign({}, this.props.style)
+    const wrapStyles = _.assign({}, this.props.style)
     const {answerCount} = this.props; //父组件传递过来的选项个数
   	return(
-      // <div className = 'answer-border' style={wrapStyles}>
-      <div className = 'answer-border'>
+      <div className = 'answer-border' style={wrapStyles}>
         <div className = 'answer-title'>
           <div className = 'answer-title-left'>
             <span className = 'answer-title-left-font'>正在答题中...</span>
@@ -70,16 +70,17 @@ class AnswerArea extends Component{
   }
 }
 AnswerArea.propTypes = {
-  // style: PropTypes.object,
+  style: PropTypes.object,
   answerCount: PropTypes.number, //选项个数
   onHideClick: PropTypes.func,  //隐藏操作
   isChooseDisable:PropTypes.bool, //是否允许选项可点击
   onChooseClick:PropTypes.func, //选中之后的操作
 }
 AnswerArea.defaultProps = {
-  // style:{},
+  style:{},
   answerCount: 2,
+  onHideClick: _.noop,
   isChooseDisable: false,
-
+  onChooseClick:_.noop,
 }
 export default AnswerArea;
