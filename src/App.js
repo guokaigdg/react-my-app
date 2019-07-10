@@ -2,6 +2,8 @@ import React,{Component, Fragment}from 'react';
 import TodoList from './TodiList/TodoList';
 import AnswerArea from './AnswerArea/index';
 import NewApp from './NewApp/index';
+import Flexbox from './Flexbox/index';
+import GuokaiBlog from './GuokiaBlog/index';
 
 class App extends Component{
   constructor(props){
@@ -23,14 +25,17 @@ class App extends Component{
        <button onClick = {this.handleClicknum.bind(this, 5)}>5个选项</button>
        <button onClick = {this.handleClicknum.bind(this, 6)}>6个选项</button>
        <p>选择的项目个数 : {this.state.answernum}</p>
-      <TodoList/>
+       
+      {/* <TodoList/> */}
       <AnswerArea 
          optionsCount ={this.state.answernum}
          onClickHideButton = {this.isHidden}
          enbleChoose = {this.state.isChoose}
          onChoose = {this.onChoose}
       /> 
-      <NewApp/>
+      {/* <NewApp/> */}
+      {/* <Flexbox/> */}
+      <GuokaiBlog/>
    </Fragment>
   )
   }
