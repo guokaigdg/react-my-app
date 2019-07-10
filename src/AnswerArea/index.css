@@ -4,8 +4,8 @@
     justify-content: center; /*主轴对齐*/
     flex-direction: column;  /*竖直排列*/
     width: 232px;
-    padding: 24px;
-    padding-bottom: 12px;
+    padding: 24px 24px 12px 24px;
+    /* padding: 5%; */
     border-radius: 6px;
     background-color: rgba(54,65,82,0.8);
 }
