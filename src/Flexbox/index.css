@@ -1,33 +1,31 @@
-.answer-border-normal{
-    width: 280px;
-    height: 206px;
-    opacity: 0.8;
-    border-radius: 6px;
-    background-color: #364152;
+.box{
     display: flex;
-    display: inline-flex;
-    flex-direction: column;
+    width: 100%;
+    width: 300px;
+    height: 300px;
+    padding: 50px;
+    opacity: 0.8;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    background-color: pink;
 
 }
-.answer-title{
-    width: 280px;
-    height: 62px;
+.box1{
+    display: flex;
+    width: 100px;
+    height: 100px;
     flex-direction: row;
     justify-content: center;
     background-color:palegreen;
 }
-/* 正在答题提示... */
-.answer-title-left2{
-
-
-}
-/* 隐藏按钮 */
-.answer-title-right2 {  
-
-}
-
-.answer-content{
+.box2{
+    display: flex;
+    width: 100px;
+    height: 100px;
     flex-direction: row;
     justify-content: center;
-
+    background-color:powderblue;
 }
