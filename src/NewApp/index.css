@@ -12,5 +12,5 @@
 @keyframes hide-item {
     0% {opacity: 1;color:red;}
     50% {opacity: 0.5; color: green }
-    100% {opacity: 0; color:powderblue}
+    100% {opacity: 0; color:black;}
 }
