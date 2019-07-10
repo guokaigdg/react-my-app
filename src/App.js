@@ -24,12 +24,12 @@ class App extends Component{
        <button onClick = {this.handleClicknum.bind(this, 6)}>6个选项</button>
        <p>选择的项目个数 : {this.state.answernum}</p>
       <TodoList/>
-      {/* <AnswerArea 
-         answerCount ={this.state.answernum}
-         onHideClick = {this.isHidden}
-         isChoose = {this.state.isChoose}
-         onChooseClick = {this.onChoose}
-      />  */}
+      <AnswerArea 
+         optionsCount ={this.state.answernum}
+         onClickHideButton = {this.isHidden}
+         enbleChoose = {this.state.isChoose}
+         onChoose = {this.onChoose}
+      /> 
       <NewApp/>
    </Fragment>
   )
