@@ -8,7 +8,7 @@ import './index.css'
 const optionslist = ['A', 'B', 'C', 'D', 'E', 'F']
 class AnswerArea extends Component {
   state = {
-    choosenOption: 'null',
+    choosenOption: null,
     isChoosenOption: false,
   }
 
