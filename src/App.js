@@ -1,7 +1,7 @@
 import React,{Component, Fragment}from 'react';
 import TodoList from './TodiList/TodoList';
 import AnswerArea from './AnswerArea/index';
-import NewApp from './NewApp/index';
+import ActionApp from './ActionApp/index';
 import Flexbox from './Flexbox/index';
 import GuokaiBlog from './GuokiaBlog/index';
 
@@ -18,24 +18,24 @@ class App extends Component{
   render(){
   return (  
    <Fragment>
-       <button onClick = {this.handleClicknum.bind(this,'null')}>清空</button>
+       {/* <button onClick = {this.handleClicknum.bind(this,'null')}>清空</button>
        <button onClick = {this.handleClicknum.bind(this, 2)}>2个选项</button>
        <button onClick = {this.handleClicknum.bind(this, 3)}>3个选项</button>
        <button onClick = {this.handleClicknum.bind(this, 4)}>4个选项</button>
        <button onClick = {this.handleClicknum.bind(this, 5)}>5个选项</button>
        <button onClick = {this.handleClicknum.bind(this, 6)}>6个选项</button>
        <p>选择的项目个数 : {this.state.answernum}</p>
-       
+        */}
       {/* <TodoList/> */}
-      <AnswerArea 
+      {/* <AnswerArea 
          optionsCount ={this.state.answernum}
          onClickHideButton = {this.isHidden}
          enbleChoose = {this.state.isChoose}
          onChoose = {this.onChoose}
-      /> 
-      {/* <NewApp/> */}
+      />  */}
+      <ActionApp/>
       {/* <Flexbox/> */}
-      <GuokaiBlog/>
+      {/* <GuokaiBlog/> */}
    </Fragment>
   )
   }

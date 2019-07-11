@@ -1,4 +1,5 @@
 import React,{Component,Fragment} from 'react';
+import { CSSTransition , TransitionGroup } from 'react-transition-group';
 import './index.css';
 
 class App extends Component{
@@ -17,9 +18,18 @@ class App extends Component{
     render(){
         return(
         <Fragment >
-            <div className = {this.state.show ? 'show':'hide'}>
-                hello
-            </div>
+             <CSSTransition
+                in={this.state.show}
+                timeout={1000}
+                classNames="fade"
+                unmountOnExit
+                // onEntered={}
+                appear={true}
+            >
+                <div>             
+                    hello        
+                </div>
+            </CSSTransition>
             <button onClick ={() => this.handleToggole()}>
                 点击展开展动画效果
             </button>
