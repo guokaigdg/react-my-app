@@ -1,0 +1,11 @@
+.content{
+    display: flex;
+    /* justify-content: center; 主轴对齐 */
+    flex-direction: column;  /*竖直排列*/
+    align-items: flex-start; /*交叉轴对齐*/
+    width: 500px;
+    height: 500px;
+    /* background-color:papayawhip; */
+    margin-top: 10px;
+    margin-left: 10px;
+} 
