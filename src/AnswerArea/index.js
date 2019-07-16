@@ -5,7 +5,15 @@ import CX from 'classnames'
 
 import './index.css'
 
-const optionslist = ['A', 'B', 'C', 'D', 'E', 'F']
+const optionsList = ['A', 'B', 'C', 'D', 'E', 'F']
+const optionsObj = {
+  A:require('./icon-select-A.svg'),
+  B:require('./icon-select-B.svg'),
+  C:require('./icon-select-C.svg'),
+  D:require('./icon-select-D.svg'),
+  E:require('./icon-select-E.svg'),
+  F:require('./icon-select-F.svg')
+}
 class AnswerArea extends Component {
   state = {
     choosenOption: null,
@@ -13,20 +21,35 @@ class AnswerArea extends Component {
   }
 
   renderAnswerOptions(optionsCount) { // 渲染选项数目
-    return optionslist.slice(0, optionsCount).map(item => (
+    return optionsList.slice(0, optionsCount).map(item => (
       <div
         role="button"
         tabIndex={0}
         key={item}
         className={CX({
-          'answer-options': true,
-          'answer-options-on': this.state.choosenOption === item,
-          'answer-options-noclick': this.state.isChoosenOption === true || this.props.enableChoose === true,
+          'answer_options': true,
+          'options-active': this.state.choosenOption === item,
+          'options-disable': this.state.isChoosenOption === true || this.props.enableChoose !== true,
         })}
         onClick={() => this.handleChoose(item)}
       >
-        <span className="answer-content-chose-font">选择</span>
-        <span className="answer-options-letter-font">{item}</span>
+        <span 
+          className={CX({
+            'chose_content': true,
+            'chose_content_disable': this.state.isChoosenOption === true,
+          })}
+        >
+          选择
+        </span>
+        <span 
+          // className="letter-font"
+          className={CX({
+            'letter-active': true,
+            'letter-disable': this.state.isChoosenOption === true || this.props.enableChoose !== true,
+          })}
+        >
+          <img src={optionsObj[item]} alt=" " />
+        </span>
       </div>
     ))
   }
@@ -50,6 +73,7 @@ class AnswerArea extends Component {
     const wrapStyles = _.assign({}, this.props.style)
     const { optionsCount } = this.props 
     return (
+      <div style ={{backgroundImage:"url("+require("./bc.jpg")+")"}}>
       <div className="answer-border" style={wrapStyles}>
         <div className="answer-title">
           <div className="answer-title-left">
@@ -68,10 +92,9 @@ class AnswerArea extends Component {
         </div>
 
         <div className="answer-content">
-
           {this.renderAnswerOptions(optionsCount)}
-
         </div>
+      </div>
       </div>
     )
   }
@@ -85,9 +108,9 @@ AnswerArea.propTypes = {
 }
 AnswerArea.defaultProps = {
   style: {},
-  optionsCount: 2,
+  optionsCount: 5,
   onClickHideButton: _.noop,
-  enableChoose: false,
+  enableChoose: true,
   onChoose: _.noop,
 }
 export default AnswerArea

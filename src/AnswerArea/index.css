@@ -72,7 +72,7 @@
     align-items: center; /*交叉轴对齐 */
 }
 /* 默认未选中选择按钮显示 */
-.answer-options{
+.answer_options{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,18 +84,20 @@
     background-color: rgba(255, 255, 255, 0.2);
 }
 /* 选中选择按钮状态*/
-.answer-options-on{
+.answer_options:hover{
     background-color: rgba(255, 255, 255, 0.4);
 }
-.answer-options-noclick{
+.options-disable{
+    background-color: rgba(255, 255, 255, 0.08);
     pointer-events: none;
 }
 /* 选择字体 */
-.answer-content-chose-font{
+.chose_content{
     width: 24px;
     height: 17px;
     font-family: PingFangSC;
     font-size: 12px;
+    opacity: 0.4;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
@@ -104,7 +106,26 @@
     text-align: center;
     color: #ffffff;
 }
-/* 选择ABCD字母字体 */
-.answer-options-letter-font{
-    color: powderblue;
+.chose_content:hover{
+    opacity: 1;
+}
+
+.chose_content_disable{
+    opacity: 1;
+}
+/* 字母字*/
+.letter-active{
+    margin-left: 4px;
+    width: 12.1px;
+    height: 16px;
+    opacity: 0.4;
+}
+.letter-active:hover{
+    opacity: 1;
+}
+.letter-disable{
+    margin-left: 4px;
+    width: 12.1px;
+    height: 16px;
+    opacity: 1;
 }
