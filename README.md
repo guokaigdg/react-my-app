@@ -32,3 +32,9 @@ import _ from 'lodash'
 ```
 import CX from 'classnames' ;
 ```
+
+#### 2019/07/15
+- 使用redux
+```
+import { createStore } from 'redux';
+```
