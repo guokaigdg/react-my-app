@@ -1,17 +1,18 @@
 import React,{Component, Fragment}from 'react';
-import TodoList from './TodiList/TodoList';
-import AnswerArea from './AnswerArea/index';
-import ActionApp from './ActionApp/index';
-import Flexbox from './Flexbox/index';
-import GuokaiBlog from './GuokiaBlog/index';
+import AntdLolist from './AntdTodoList/index';
+// import AnswerArea from './AnswerArea/index';
+// import TodoList from './TodiList/TodoList';
+// import ActionApp from './ActionApp/index';
+// import Flexbox from './Flexbox/index';
+// import GuokaiBlog from './GuokiaBlog/index';
 
 class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      answernum: 0,
+      answernum: 5,
       isHidden: 0,
-      isChoose:false,
+      isChoose:true,
     };
     this.handleClicknum = this.handleClicknum.bind(this);
   }
@@ -23,9 +24,8 @@ class App extends Component{
        <button onClick = {this.handleClicknum.bind(this, 3)}>3个选项</button>
        <button onClick = {this.handleClicknum.bind(this, 4)}>4个选项</button>
        <button onClick = {this.handleClicknum.bind(this, 5)}>5个选项</button>
-       <button onClick = {this.handleClicknum.bind(this, 6)}>6个选项</button>
-       <p>选择的项目个数 : {this.state.answernum}</p>
-        */}
+       <button onClick = {this.handleClicknum.bind(this, 6)}>6个选项</button> */}
+      {/* <p>选择的项目个数 : {this.state.answernum}</p> */}
       {/* <TodoList/> */}
       {/* <AnswerArea 
          optionsCount ={this.state.answernum}
@@ -33,9 +33,10 @@ class App extends Component{
          enbleChoose = {this.state.isChoose}
          onChoose = {this.onChoose}
       />  */}
-      <ActionApp/>
+      {/* <ActionApp/> */}
       {/* <Flexbox/> */}
       {/* <GuokaiBlog/> */}
+      <AntdLolist/>
    </Fragment>
   )
   }
@@ -45,7 +46,7 @@ class App extends Component{
    })
   }
   onChoose(){
-    alert("123");
+    // alert("123");
   }
   isHidden(){
    alert("隐藏");
