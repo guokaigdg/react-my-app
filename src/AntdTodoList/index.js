@@ -1,22 +1,22 @@
 import React, {Component } from 'react';
 import { Input, Button, List, Typography } from 'antd';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import store from '../store';
 import './index.css';
 
-const data = [
-    'Racing car sprays burning fuel into crowd.',
-    'Japanese princess to wed commoner.',
-    'Australian walks 100km after outback crash.',
-    'Man charged over missing wedding girl.',
-    'Los Angeles battles huge wildfires.',
-  ];  
-class AntdTodoList extends Component{
 
+class AntdTodoList extends Component{
+    constructor(props){
+        super(props);
+        this.state = store.getState();
+        console.log(this.state);
+        
+    }
     render(){
         return(
             <div className='content' >
                 <div>
-                <Input placeholder='todo info' style={{width:'300px',marginRight:'10px'}}></Input>
+                <Input value={this.state.inputValue} placeholder='todo info' style={{width:'300px',marginRight:'10px'}}></Input>
                 <Button type="primary">增加</Button>             
                 </div>
                 <div > 
@@ -26,7 +26,7 @@ class AntdTodoList extends Component{
                     header={<div>Header</div>}
                     footer={<div>Footer</div>}
                     bordered //List外边框
-                    dataSource={data}
+                    dataSource={this.state.list}
                     renderItem= {item =><List.Item>{item}</List.Item>}
                 />   
                 </div>
@@ -36,4 +36,4 @@ class AntdTodoList extends Component{
         )
     }
 }
-export default AntdTodoList;
+export default AntdTodoList;  
