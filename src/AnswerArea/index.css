@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center; /*主轴对齐*/
     flex-direction: column;  /*竖直排列*/
-    width: 232px;
+    width: 280px;
     padding: 24px 24px 12px 24px;
     /* padding: 5%; */
     border-radius: 6px;
@@ -26,8 +26,7 @@
 }
 /* 正在答题字体 */
 .answer-title-left-font{
-    width: 72px;
-    height: 17px;
+    display: inline-block;
     font-family: PingFangSC;
     font-size: 12px;
     font-weight: normal;
@@ -48,6 +47,7 @@
     border-radius: 6px;
     background-color: rgba(255, 255, 255, 0.4);
     text-align: center;
+    opacity: 0.4;
 }
 /* 隐藏按钮字体 */
 .answer-title-right-font{
@@ -61,6 +61,10 @@
     line-height: normal;
     letter-spacing: normal;
     color: #ffffff;
+    
+}
+.answer-title-right:hover{
+    opacity: 1;
 }
 /* 选项区 */
 .answer-content{
@@ -86,6 +90,7 @@
 /* 选中选择按钮状态*/
 .answer_options:hover{
     background-color: rgba(255, 255, 255, 0.4);
+    cursor:pointer;
 }
 .options-disable{
     background-color: rgba(255, 255, 255, 0.08);

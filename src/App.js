@@ -1,6 +1,6 @@
 import React,{Component, Fragment}from 'react';
 import AntdLolist from './AntdTodoList/index';
-// import AnswerArea from './AnswerArea/index';
+import AnswerArea from './AnswerArea/index';
 // import TodoList from './TodiList/TodoList';
 // import ActionApp from './ActionApp/index';
 // import Flexbox from './Flexbox/index';
@@ -46,7 +46,8 @@ class App extends Component{
    })
   }
   onChoose(){
-    // alert("123");
+    alert("123");
+    // alert(this.state.choosenOption)
   }
   isHidden(){
    alert("隐藏");

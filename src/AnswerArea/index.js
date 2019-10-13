@@ -26,27 +26,21 @@ class AnswerArea extends Component {
         role="button"
         tabIndex={0}
         key={item}
-        className={CX({
-          'answer_options': true,
-          'options-active': this.state.choosenOption === item,
-          'options-disable': this.state.isChoosenOption === true || this.props.enableChoose !== true,
-        })}
+        className="answer_options"
+        // className={CX({
+        //   'answer_options': true,
+        //   'options-active': this.state.choosenOption === item,
+        //   'options-disable': this.state.isChoosenOption === true || this.props.enableChoose !== true,
+        // })}
         onClick={() => this.handleChoose(item)}
       >
         <span 
-          className={CX({
-            'chose_content': true,
-            'chose_content_disable': this.state.isChoosenOption === true,
-          })}
+
         >
           选择
         </span>
         <span 
-          // className="letter-font"
-          className={CX({
-            'letter-active': true,
-            'letter-disable': this.state.isChoosenOption === true || this.props.enableChoose !== true,
-          })}
+ 
         >
           <img src={optionsObj[item]} alt=" " />
         </span>
@@ -55,14 +49,15 @@ class AnswerArea extends Component {
   }
 
   handleChoose(option) {
-    if (this.props.enableChoose === true) {
+    if (this.props.enableChoose !== true) {
       return
     }
     this.setState({
       choosenOption: option,
       isChoosenOption: true,
     })
-    this.props.onChoose(option)
+    // alert(option)
+    // this.props.onChoose(option)
   }
 
   handleHide() {
@@ -77,7 +72,9 @@ class AnswerArea extends Component {
       <div className="answer-border" style={wrapStyles}>
         <div className="answer-title">
           <div className="answer-title-left">
-            <span className="answer-title-left-font">正在答题中...</span>
+            <span className="answer-title-left-font">
+             { this.state.choosenOption === null ? '正在答题中...': `你选择了选项 "${this.state.choosenOption}"`}
+            </span>
           </div>
           <div className="answer-title-right">
             <span
