@@ -10,11 +10,16 @@ function Login() {
                     <p>账户</p>
                     <Input className="invite_code"
                         placeholder='请输入邀请码' 
-                        tyle={{width:'300px',marginRight:'10px'}}
+                        type="text"
+                        name="invite-code"
+                        maxLength="120"
                     />
-                    <Input className="invite_name"
+                    <Input 
+                        className="invite_name"
                         placeholder='请输入昵称' 
-                        tyle={{width:'300px',marginRight:'10px'}}
+                        type="text"
+                        name="invite-code"
+                        maxLength="50"
                     />
                     <Button type="primary">增加</Button>             
             </div>
