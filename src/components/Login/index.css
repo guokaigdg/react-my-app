@@ -1,25 +1,29 @@
 .body{
     display: flex;
     justify-content: center; 
-    flex-direction: column;  /*竖直排列*/
-    align-items: flex-start; /*交叉轴对齐*/
+    align-items: flex-start; 
+   
 }
 .LoginWrap{
     display: flex;
     justify-content: center; 
     flex-direction: column;  /*竖直排列*/
     align-items: flex-start; /*交叉轴对齐*/
-    width: 30vw;
-    height: 30vh;
     background-color:papayawhip;
     margin-top: 10px;
     margin-left: 10px;
+    /* height: 50vh; */
 } 
-.invite_code{
+.title{
+    font-size: 18px;
+}
+.user_info{
+    margin-top: 10px;
+    width: 200px;
+    margin-right:10px;
+    margin-bottom: 10px;
+}
+.login-btn{
     margin-top: 10px;
 
-}
-.invite_name{
-    margin-top: 10px;
-    margin-bottom: 20px;;
 }
